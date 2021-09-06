@@ -1,10 +1,22 @@
 <div class="test">
   <h3>Đây là component Home</h3>
   <h2>chào bạn {{ name }}</h2>
-  <input type="text" [(ngModel)]="age" />
-  <h2>tuổi của bạn là {{ age }}</h2>
-
-  <div *ngIf="age >= 18; then gia; else tre"></div>
-  <ng-template #tre> Bạn còn quá trẻ</ng-template>
-  <ng-template #gia> Bạn còn quá già</ng-template>
+  <table class="table">
+    <tr>
+      <th>STT</th>
+      <th>Tên</th>
+      <th>Giá</th>
+      <th>Đại Hạ Giá</th>
+    </tr>
+    <tr *ngFor="let t of traicay; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ t.name }}</td>
+      <td>
+        <span [ngClass]="{ soam: t.price < 0 }">{{ t.price }}</span>
+      </td>
+      <td>
+        <span *ngIf="t.hagia">Đang đại hạ giá</span>
+      </td>
+    </tr>
+  </table>
 </div>

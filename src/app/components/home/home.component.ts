@@ -9,6 +9,13 @@ export class HomeComponent implements OnInit {
   public name = 'hieu nguyen'; // đẩy data từ component ra HTML hay còn gọi là databinding value 1 chiều
   // đẩy data từ component ra thẻ HTML thông qua thuộc tính của thẻ
   public age = 16;
+
+  public traicay = [
+    { name: 'TÁO', price: 99, hagia: true },
+    { name: 'Nho', price: 99, hagia: false },
+    { name: 'LÊ', price: 45 },
+    { name: 'Chuối', price: -6 },
+  ];
   constructor() {}
 
   ngOnInit(): void {}

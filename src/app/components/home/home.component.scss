@@ -2,5 +2,24 @@
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px red;
-  width: 324px;
+  width: 442px;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+td,
+th {
+  min-width: 100px;
+}
+
+.soam {
+  color: red;
 }
