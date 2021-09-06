@@ -1,9 +1,7 @@
 <div class="test">
   <h3>Đây là component Home</h3>
   <h2>chào bạn {{ name }}</h2>
-  <input type="text" value="{{ name }}" />
-  <br />
-  <input [value]="name" title="đây là title {{ name }}" />
-  <br />
-  <input [value]="name" [title]="'đây là title ' + name" />
+
+  <span *ngIf="age >= 18">bạn quá già r</span>
+  <span *ngIf="age < 18">bạn quá trẻ r</span>
 </div>
