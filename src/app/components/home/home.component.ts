@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     { name: 'TÁO', price: 99, hagia: true },
     { name: 'Nho', price: 99, hagia: false },
     { name: 'LÊ', price: 45 },
-    { name: 'Chuối', price: -6 },
+    { name: 'Chuối', price: -6, hagia: true },
   ];
   constructor() {}
 
