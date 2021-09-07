@@ -1,10 +1,13 @@
+<p appHighLight>app high-light work</p>
+<p [appHighLight]="'red'">app high-light work</p>
+<p [appHighLight]="showColor">app high-light work</p>
 <ul [ngSwitch]="login">
   <li *ngSwitchCase="'user'">
-    <p>User login</p>
+    <p>User is login</p>
     <button (click)="changeLoginAdmin()">change login</button>
   </li>
   <li *ngSwitchCase="'admin'">
-    <p>Admin login</p>
+    <p>Admin is login</p>
     <button (click)="changeLoginUser()">change login</button>
   </li>
   <li *ngSwitchDefault>
