@@ -1,24 +1,16 @@
 <div class="test">
   <h3>Đây là component Home</h3>
   <h2>chào bạn {{ name }}</h2>
-  <table class="table">
-    <tr>
-      <th>STT</th>
-      <th>Tên</th>
-      <th>Giá</th>
-      <th>Đại Hạ Giá</th>
-    </tr>
-    <tr *ngFor="let t of traicay; index as i">
-      <td>{{ i + 1 }}</td>
-      <td>{{ t.name }}</td>
-      <td>
-        <span [ngClass]="{ soam: t.price < 0 }">{{
-          t.price | currency: "VND":"symbol":"1.2"
-        }}</span>
-      </td>
-      <td>
-        <span>{{ t.hagia | onSale | uppercase }}</span>
-      </td>
-    </tr>
-  </table>
+  <p>Tỉnh / Thành Phố</p>
+  <select id="city" (change)="changeCity($event)">
+    <option *ngFor="let c of vietNamData" value="{{ c.city }}">
+      {{ c.city }}
+    </option>
+  </select>
+  <p>Quận / Huyện</p>
+  <select id="district">
+    <option *ngFor="let d of distincts" value="{{ d }}">
+      {{ d }}
+    </option>
+  </select>
 </div>
