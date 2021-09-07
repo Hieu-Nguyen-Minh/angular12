@@ -6,9 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { OnSalePipe } from './pipes/on-sale.pipe';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, OnSalePipe],
+  declarations: [AppComponent, HomeComponent, OnSalePipe, PageNotFoundComponent, AboutComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
