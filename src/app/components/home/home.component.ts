@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-home',
@@ -80,9 +81,17 @@ export class HomeComponent implements OnInit {
       ],
     },
   ];
-  constructor() {}
 
-  ngOnInit(): void {}
+  public counter = 0;
+  public counterBp = 0;
+
+  constructor(private commonService: CommonService) {}
+
+  ngOnInit(): void {
+    this.counter = this.commonService.getCounter();
+    this.counterBp = this.commonService.binhPhuong(this.counter);
+    this.commonService.setCounter(1);
+  }
 
   changeCity(e: any) {
     const city = e.target.value;
