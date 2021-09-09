@@ -9,7 +9,7 @@ import { CommonService } from 'src/app/services/common.service';
 export class TemplateDrivenFormComponent implements OnInit {
   public user = {
     name: '',
-    age: 0,
+    age: '',
   };
   constructor(private commonService: CommonService) {}
 
