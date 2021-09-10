@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
+import { GetDataComponent } from './components/get-data/get-data.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'templateForm', component: TemplateDrivenFormComponent },
   { path: 'reactiveForm', component: ReactiveFormComponent },
+  { path: 'getdata', component: GetDataComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
