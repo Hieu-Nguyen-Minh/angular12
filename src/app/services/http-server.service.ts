@@ -24,6 +24,11 @@ export class HttpServerService {
     return this.httpClient.get(url, this.httpOptions);
   }
 
+  public postComnent(param): Observable<any> {
+    const url = `${this.BASE_URL}/comments`;
+    return this.httpClient.post(url, param, this.httpOptions);
+  }
+
   public getUser(number): Observable<any> {
     const url = `${this.BASE_URL2}${number}`;
     return this.httpClient.get(url, this.httpOptions);

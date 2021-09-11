@@ -14,6 +14,7 @@ import { AboutComponent } from './components/about/about.component';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { GetDataComponent } from './components/get-data/get-data.component';
+import { PostDataComponent } from './components/post-data/post-data.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { GetDataComponent } from './components/get-data/get-data.component';
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
     GetDataComponent,
+    PostDataComponent,
   ],
   imports: [
     BrowserModule,

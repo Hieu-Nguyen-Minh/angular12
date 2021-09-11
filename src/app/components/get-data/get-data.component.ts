@@ -15,7 +15,7 @@ export class GetDataComponent implements OnInit {
     });
 
     this.httpServerService.getUser(10).subscribe((data) => {
-      console.log('user', data.results);
+      // console.log('user', data.results);
     });
   }
 }
