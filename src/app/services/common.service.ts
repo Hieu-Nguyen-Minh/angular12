@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -6,8 +7,30 @@ import { Injectable } from '@angular/core';
 export class CommonService {
   private counter = 0;
 
-  constructor() {
-    // console.log(this.counter);
+  public age = 10;
+
+  public totalStudent = 0;
+
+  public totalStudent$ = new BehaviorSubject<number>(0);
+
+  constructor() {}
+
+  public setTotalStudent(total: number) {
+    this.totalStudent = total;
+    this.totalStudent$.next(total);
+  }
+
+  public increamentTotalStudents() {
+    this.totalStudent++;
+    this.totalStudent$.next(this.totalStudent);
+  }
+
+  public tangtuoi() {
+    this.age++;
+  }
+
+  public giamtuoi() {
+    this.age--;
   }
 
   public binhPhuong(n: number): number {

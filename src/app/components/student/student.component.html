@@ -1,0 +1,54 @@
+<div class="container">
+  <button (click)="addSV()" mat-raised-button color="primary">
+    <mat-icon>person_add</mat-icon>
+    Thêm SV
+  </button>
+  <table id="customers" style="border-collapse: collapse">
+    <tr>
+      <th>Id</th>
+      <th>
+        MSV
+        <mat-icon style="cursor: pointer" (click)="sortByCode('down')"
+          >arrow_downward</mat-icon
+        >
+        <mat-icon style="cursor: pointer" (click)="sortByCode('up')"
+          >arrow_upward</mat-icon
+        >
+      </th>
+      <th>Gender</th>
+      <th>Tên</th>
+      <th>Họ</th>
+      <th>Email</th>
+      <th>SĐT</th>
+      <th>Ảnh</th>
+      <th>Xoá, sửa</th>
+    </tr>
+    <tr *ngFor="let student of students">
+      <td>{{ student?.id }}</td>
+      <td>{{ student?.code }}</td>
+      <td>{{ student?.gender }}</td>
+      <td>{{ student?.firstName }}</td>
+      <td>{{ student?.lastName }}</td>
+      <td>{{ student?.email }}</td>
+      <td>{{ student?.phone }}</td>
+      <td>
+        <img *ngIf="student?.img" src="{{ student?.img }}" height="50" />
+      </td>
+      <td>
+        <mat-icon
+          style="cursor: pointer"
+          title="nhấn để xoá"
+          (click)="deleteStudent(student.id)"
+          >clear</mat-icon
+        >
+        &nbsp;
+        <mat-icon
+          style="cursor: pointer"
+          title="nhấn để sửa"
+          (click)="editStudent(student.id)"
+          >edit</mat-icon
+        >
+      </td>
+    </tr>
+  </table>
+</div>

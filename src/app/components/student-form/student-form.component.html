@@ -1,0 +1,68 @@
+<div class="container">
+  <h1>Nhập 1 sinh viên mới</h1>
+  <form [formGroup]="studentForm">
+    <mat-form-field class="form-header">
+      <mat-label>MSV</mat-label>
+      <input matInput formControlName="code" required />
+    </mat-form-field>
+
+    <!-- <span style="color: red" *ngIf="!strudentForm.controls.name.valid"
+      >Name is required</span
+    > -->
+
+    <mat-form-field class="form-header">
+      <mat-label>Giới tính</mat-label>
+      <input matInput formControlName="gender" required />
+    </mat-form-field>
+
+    <mat-form-field class="form-header">
+      <mat-label>Tên</mat-label>
+      <input matInput formControlName="firstName" required />
+    </mat-form-field>
+
+    <mat-form-field class="form-header">
+      <mat-label>Họ</mat-label>
+      <input matInput formControlName="lastName" required />
+    </mat-form-field>
+
+    <mat-form-field class="form-header">
+      <mat-label>Ngày sinh</mat-label>
+      <input matInput formControlName="dob" required />
+    </mat-form-field>
+
+    <mat-form-field class="form-header">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required />
+    </mat-form-field>
+
+    <mat-form-field class="form-header">
+      <mat-label>SĐT</mat-label>
+      <input matInput formControlName="phone" required />
+    </mat-form-field>
+
+    <mat-form-field class="form-header">
+      <mat-label>ảnh</mat-label>
+      <input matInput formControlName="img" />
+    </mat-form-field>
+    <br />
+    <button
+      (click)="saveAndGotoList()"
+      class="btn btn-success"
+      [disabled]="!studentForm.valid"
+    >
+      Lưu và trở về danh sánh SV
+    </button>
+    &nbsp;
+    <button
+      (click)="saveAndAddNew()"
+      class="btn btn-success"
+      [disabled]="!studentForm.valid"
+    >
+      Lưu và nhập mới
+    </button>
+    &nbsp;
+    <button *ngIf="id === 0" (click)="addRandom()" class="btn btn-success">
+      thêm ngẫu nhiên 1 người
+    </button>
+  </form>
+</div>

@@ -9,12 +9,18 @@ import { CommonService } from 'src/app/services/common.service';
 export class AboutComponent implements OnInit {
   public showColor = 'green';
   public login = 'user';
+  public age;
 
   public counter = 0;
   public counterBp = 0;
 
-  constructor(private commonService: CommonService) {}
-
+  constructor(private commonService: CommonService) {
+    this.age = this.commonService.age;
+  }
+  giamtuoi() {
+    this.commonService.age--;
+    this.age = this.commonService.age;
+  }
   ngOnInit(): void {
     this.counter = this.commonService.getCounter();
     this.counterBp = this.commonService.binhPhuong(this.counter);

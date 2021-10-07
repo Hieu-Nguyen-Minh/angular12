@@ -1,31 +1,74 @@
-<h2>welcome to Angular 12</h2>
-<h2>Chúc bạn thành công</h2>
-<nav>
-  <ul>
-    <li><a routerLink="home" routerLinkActive="active"> Home Component</a></li>
-    <li>
-      <a routerLink="about" routerLinkActive="active"> about Component</a>
-    </li>
-    <li>
-      <a routerLink="templateForm" routerLinkActive="active">
-        Template Driven Form Component</a
-      >
-    </li>
-    <li>
-      <a routerLink="reactiveForm" routerLinkActive="active">
-        Reactive Form Component</a
-      >
-    </li>
-    <li>
-      <a routerLink="getdata" routerLinkActive="active"> Get Data Component</a>
-    </li>
+<mat-toolbar color="primary" class="nav-height">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="openLeftSide()">menu</mat-icon>
+    </button>
+    <h1>Quản lý sinh viên</h1>
+    <span class="menu-spacer" style="width: 100px"></span>
+    <div>
+      <a mat-button routerLink="dashboard" [routerLinkActive]="'active-link'">
+        <mat-icon mat-list-icon>home</mat-icon> Bảng điều khiển
+      </a>
 
-    <li>
-      <a routerLink="postdata" routerLinkActive="active">
-        Post Data Component</a
-      >
-    </li>
-  </ul>
-</nav>
+      <a mat-button routerLink="students" [routerLinkActive]="'active-link'">
+        <mat-icon>folder_shared</mat-icon>
+        <span
+          *ngIf="totalStudent > 0"
+          matBadge="{{ totalStudent }}"
+          matBadgeColor="warn"
+        >
+          Sinh Viên &nbsp;
+        </span>
+      </a>
 
-<router-outlet></router-outlet>
+      <a
+        mat-button
+        [routerLink]="['/about']"
+        [routerLinkActive]="'active-link'"
+      >
+        <mat-icon>person</mat-icon> Vài Nét
+      </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav (closed)="closeLeftSide()">
+    <mat-nav-list>
+      <a routerLink="dashboard">
+        <mat-icon mat-list-icon>home</mat-icon> Bảng điều khiển
+      </a>
+      <a routerLink="students" mat-list-item>
+        <mat-icon>folder_shared</mat-icon>
+        <span
+          matBadge="{{ totalStudent }}"
+          matBadgeColor="warn"
+          matBadgeSize="small"
+        >
+          Sinh Viên</span
+        >
+      </a>
+      <a routerLink="home" mat-list-item>
+        <mat-icon>person</mat-icon> Vài Nét
+      </a>
+      <a (click)="sidenav.toggle()" mat-list-item>
+        <mat-icon>close</mat-icon> Đóng
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div
+      style="
+        height: 90vh;
+        margin-top: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+      "
+      [ngClass]="{
+        'content-move-left': !isOpened,
+        'content-move-right': isOpened
+      }"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

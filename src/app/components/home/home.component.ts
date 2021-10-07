@@ -9,7 +9,13 @@ import { CommonService } from 'src/app/services/common.service';
 export class HomeComponent implements OnInit {
   public name = 'hieu nguyen'; // đẩy data từ component ra HTML hay còn gọi là databinding value 1 chiều
   // đẩy data từ component ra thẻ HTML thông qua thuộc tính của thẻ
-  public age = 16;
+  public age;
+  public traicay = [
+    { name: 'TÁO', price: 99, hagia: true },
+    { name: 'Nho', price: 99, hagia: false },
+    { name: 'LÊ', price: 45 },
+    { name: 'Chuối', price: -6, hagia: true },
+  ];
 
   public distincts: string[] | string = ['quận huyện'];
 
@@ -85,7 +91,14 @@ export class HomeComponent implements OnInit {
   public counter = 0;
   public counterBp = 0;
 
-  constructor(private commonService: CommonService) {}
+  constructor(private commonService: CommonService) {
+    this.age = this.commonService.age;
+  }
+
+  tangtuoi() {
+    this.commonService.age++;
+    this.age = this.commonService.age;
+  }
 
   ngOnInit(): void {
     this.counter = this.commonService.getCounter();
